@@ -25,3 +25,5 @@ document.getElementById('inputBox').addEventListener('input', function() {
       console.error('There was a problem with the fetch operation:', error.message);
     });
 });
+
+

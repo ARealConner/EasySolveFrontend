@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Calculator styles
+   ========================================================================== */
+
+/* Light mode styles */
+[data-theme="light"] {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+[data-theme="light"] button {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+[data-theme="light"] .calculator {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+[data-theme="dark"] button {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+[data-theme="dark"] .calculator {
+  background-color: #333;
+  color: #f4f4f4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.calculator {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#outputBox {
+  background-color: #f2f2f2;
+}
