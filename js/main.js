@@ -45,7 +45,7 @@ async function processInput(inputText) {
 }
 
 async function sendProcessRequest(inputText) {
-  const response = await fetch('https://solverservice-dfab67be627f.herokuapp.com/processInput', {
+  const response = await fetch('https://solverservice-dfab67be627f.herokuapp.com/api/processInput', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
