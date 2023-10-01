@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/interface.css">
+  <link rel="stylesheet" href="css/calculator.css">
 
 
   <meta name="theme-color" content="#fafafa">
@@ -25,13 +25,16 @@
 
 <body>
 
-<!--<h1>EasySolve.AI Calculator</h1>-->
-<div class="topBar">
-  <button id="themeToggle">Dark Mode</button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
+<header>
+  <h1>EasySolve.AI</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pages/about.html">About</a>
+  </nav>
+  <div id="themeToggleContainer">
+    <button id="themeToggle">Dark Mode</button>
+  </div>
+</header>
 
 <div class="calculator">
   <label for="inputBox" class="visually-hidden">Input Box</label><textarea id="inputBox" placeholder="Enter your data here..."></textarea>

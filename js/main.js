@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 async function processInput(inputText) {
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
   for (let i = 0; i < 3; i++) {
     let ok = false;
     // Call the backend API
@@ -35,12 +36,14 @@ async function processInput(inputText) {
       .catch(error => {
         console.error("Error:", error);
       });
+
+
+    // wait for 1 second before trying again
+    await sleep(1000);
     if (ok) {
       break;
     }
     console.log("Retrying..." + i);
-    // wait for 1 second before trying again
-    await new Promise(resolve => setTimeout(resolve, 10));
   }
 }
 
