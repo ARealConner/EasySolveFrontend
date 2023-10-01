@@ -92,6 +92,8 @@ textarea {
   height: 100%;
   padding: 10px;
   font-size: 16px;
+  white-space: nowrap;
+  overflow: auto;
 }
 
 button#themeToggle {
@@ -127,7 +129,7 @@ button#themeToggle {
   --primary-bg-color: #333;
   --primary-text-color: #f4f4f4;
   --secondary-bg-color: #2f2f2f;
-  --secondary-text-color: white;
+  --secondary-text-color: #a8a2a2;
   background-color: var(--secondary-bg-color);
   color: var(--secondary-bg-color);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
@@ -162,3 +164,28 @@ header, footer {
   background-color: var(--secondary-bg-color);
   color: var(--secondary-text-color);
 }
+
+
+/* Style the scrollbar track (background) */
+textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  background-color: var(--secondary-bg-color); /* Color of the track */
+  cursor: grab;
+}
+
+/* Style the scrollbar thumb (the moving part) */
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--primary-text-color); /* Color of the thumb */
+  border-radius: 4px;     /* Rounded corners */
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  cursor: grab;
+  transform: scale(0.99); /* Apply a barely noticeable transform */
+}
+
+/* Style the scrollbar thumb on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-text-color); /* Color on hover */
+}
+
