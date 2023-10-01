@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
   outputBox = document.getElementById("outputBox");
 
   inputBox.addEventListener("input", function() {
-    const inputText = inputBox.value;
+    const inputText = inputBox.value.replaceAll("_", "Underscore");
 
     // Call the backend API
     processInput(inputText);
@@ -29,8 +29,8 @@ async function processInput(inputText) {
         console.log("Processed Input:", processedInput);
         console.log("Processed Output:", processedOutput);
 
-        inputBox.value = processedInput;
-        outputBox.value = processedOutput;
+        inputBox.value = processedInput.replaceAll("Underscore", "_");
+        outputBox.value = processedOutput.replaceAll("Underscore", "_");
         ok = true;
       })
       .catch(error => {
