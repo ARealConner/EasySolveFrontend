@@ -1,0 +1,150 @@
+@use "sass:map";
+
+// Global styles and transitions
+* {
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+// Reset styles for HTML, h1, body, footer
+html,
+h1,
+body,
+footer {
+  margin: 0;
+}
+
+// HTML and Body
+html {
+  height: 100%;
+}
+
+body {
+  box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  padding: 0;
+}
+
+// Main content
+main {
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  flex-grow: 1;
+  height: auto;
+  margin: auto;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+// Header and Footer
+header,
+footer {
+  flex-shrink: 0;
+  padding: 1rem;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  position: sticky;
+  text-align: center;
+  width: 100%;
+}
+
+// Navigation
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+// Text colors
+h1,
+h2,
+h3,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--primary-text-color);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+// Theme toggle button
+button#theme-toggle {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(0 0 0 / 100%);
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+// Themes
+$themes: (
+  light: (
+    primary-bg-color: #f4f4f4,
+    primary-text-color: #333,
+    secondary-bg-color: white,
+    secondary-text-color: black,
+  ),
+  dark: (
+    primary-bg-color: #333,
+    primary-text-color: #f4f4f4,
+    secondary-bg-color: #2f2f2f,
+    secondary-text-color: white,
+  ),
+);
+
+@each $theme-name, $theme-values in $themes {
+  [data-theme="#{$theme-name}"]:root {
+    --primary-bg-color: #{map.get($theme-values, primary-bg-color)};
+    --primary-text-color: #{map.get($theme-values, primary-text-color)};
+    --secondary-bg-color: #{map.get($theme-values, secondary-bg-color)};
+    --secondary-text-color: #{map.get($theme-values, secondary-text-color)};
+  }
+}
+
+// Main content and theme toggle button
+main,
+button#theme-toggle {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+button#theme-toggle:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-bg-color);
+}
+
+// Header and Footer colors
+header,
+footer,
+body {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+}
+
+button#theme-toggle:focus {
+  box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+  outline: none;
+}
