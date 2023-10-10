@@ -5,23 +5,19 @@ let inputBox: HTMLElement | null;
 let outputBox: HTMLElement | null;
 
 document.addEventListener("DOMContentLoaded", function () {
-    inputBox = document.getElementById("input-box");
-    outputBox = document.getElementById("output-box");
+    inputBox = document.getElementById("input-box")!;
+    outputBox = document.getElementById("output-box")!;
 
-    if (inputBox) {
-        inputBox.addEventListener("input", function () {
-            if (inputBox && outputBox) {
-                const inputText = inputBox.innerText.replaceAll("_", "Underscore");
+    inputBox.addEventListener("input", function () {
+        if (inputBox && outputBox) {
+            const inputText = inputBox.innerText.replaceAll("_", "Underscore");
 
-                // Call the backend API
-                processInput(inputText)
-                    .then(() => console.log("Input processed successfully"))
-                    .catch((error) => console.error("Processing input failed: " + error));
-            }
-        });
-    } else {
-        console.error("Element with id 'inputBox' not found");
-    }
+            // Call the backend API
+            processInput(inputText)
+                .then(() => console.log("Input processed successfully"))
+                .catch((error) => console.error("Processing input failed: " + error));
+        }
+    });
 });
 
 async function processInput(inputText: String) {
