@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About - EasySolve.AI</title>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="../css/about.css" rel="stylesheet">
+  <script defer src="../js/interface.js"></script>
+  <script defer src="../js/tutorial.js"></script>
+  <meta content="#fafafa" name="theme-color">
+</head>
+<body>
+<header>
+  <h1>EasySolve.AI</h1>
+  <nav>
+    <a href="../index.html">Calculator</a>
+    <a href="about.html">About</a>
+  </nav>
+  <button id="themeToggle">Dark Mode</button>
+</header>
+
+<main>
+  <section id="tutorial-section">
+    <h2>How to Use EasySolve.AI</h2>
+
+    <h3>Introduction</h3>
+    <p>Welcome to EasySolve.AI! This intelligent calculator is not just another solver—it can automatically determine
+      the unknowns in a system of equations and find their values for you based on the information you provide.</p>
+
+    <h3>Basic Interface</h3>
+    <p>The user interface consists of two text boxes: The left text box is for user input where you'll define variables,
+      equations, and queries. The right text box displays the processed output.</p>
+
+    <h4>Real-time Updates</h4>
+    <p>As you type, the system automatically processes the input and updates the output. For example, when you type a
+      Greek symbol like <code>\alpha</code>, it will automatically convert into α.</p>
+
+    <h3>Defining Variables and Solving Equations</h3>
+    <p>You can define variables and equations and then ask the system to solve for unknowns. The system uses the
+      provided information to solve complex equations automatically.</p>
+
+    <h4>Example 1</h4>
+    <iframe data-example="\alpha = 10\ntime = 10\n\omega_i = 10\n\omega_f" height="200" id="example1"
+            src="../index.html?hideHeader=true" width="400"></iframe>
+
+    <h3>Querying for Equations</h3>
+    <p>If you're interested in all the equations related to a specific variable, you can simply type the variable name.
+      For instance, typing <code>\alpha</code> will provide you with all the equations that involve α.</p>
+
+    <h4>Example 2</h4>
+    <iframe data-example="\alpha" height="200" id="example2" src="../index.html?hideHeader=true" width="400"></iframe>
+
+    <h3>Advanced Features</h3>
+    <p>We have a selection of pre-defined equations from Physics' General Mechanics. When you type a variable related to
+      these equations, the solver knows the relevant equations to use. For example, typing <code>\omega</code> will
+      provide equations related to angular velocity.</p>
+
+    <h4>Example 3</h4>
+    <iframe data-example="\omega" height="200" id="example3" src="../index.html?hideHeader=true" width="400"></iframe>
+  </section>
+</main>
+
+<footer>
+  <p>© 2023 EasySolve.AI. All rights reserved.</p>
+</footer>
+</body>
+</html>

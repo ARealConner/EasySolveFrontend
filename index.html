@@ -4,23 +4,23 @@
 <head>
   <meta charset="utf-8">
   <title>EasySolve.AI Calculator</title>
-  <meta name="description" content="Advanced Calculator by EasySolve.AI">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="Advanced Calculator by EasySolve.AI" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
 
-  <meta property="og:title" content="EasySolve.AI Calculator">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://easysolve.ai">
-  <meta property="og:image" content="icon.png">
+  <meta content="EasySolve.AI Calculator" property="og:title">
+  <meta content="website" property="og:type">
+  <meta content="https://easysolve.ai" property="og:url">
+  <meta content="icon.png" property="og:image">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link href="site.webmanifest" rel="manifest">
+  <link href="assets/img/icon.png" rel="apple-touch-icon">
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/calculator.css">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/calculator.css" rel="stylesheet">
 
 
-  <meta name="theme-color" content="#fafafa">
+  <meta content="#fafafa" name="theme-color">
 </head>
 
 <body>
@@ -28,8 +28,8 @@
 <header>
   <h1>EasySolve.AI</h1>
   <nav>
-    <a href="index.html">Home</a>
     <a href="pages/about.html">About</a>
+    <a href="pages/how-to-use.html">How To Use</a>
   </nav>
   <div id="themeToggleContainer">
     <button id="themeToggle">Dark Mode</button>
@@ -37,21 +37,17 @@
 </header>
 
 <div class="calculator">
-  <label for="inputBox" class="visually-hidden">Input Box</label><textarea id="inputBox" placeholder="Enter your data here..."></textarea>
-  <label for="outputBox" class="visually-hidden">output Box</label><textarea id="outputBox" placeholder="Your output will appear here..." readonly></textarea>
+  <label class="visually-hidden" for="inputBox">Input Box</label><textarea id="inputBox"
+                                                                           placeholder="Enter your data here..."></textarea>
+  <label class="visually-hidden" for="outputBox">output Box</label><textarea id="outputBox"
+                                                                             placeholder="Your output will appear here..."
+                                                                             readonly></textarea>
 </div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/interface.js"></script>
-
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-<!--<script>-->
-<!--  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;-->
-<!--  ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')-->
-<!--</script>-->
-<!--<script src="https://www.google-analytics.com/analytics.js" async></script>-->
 </body>
 
 </html>
