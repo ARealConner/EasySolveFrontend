@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About - EasySolve.AI</title>
+  <title>Guide - EasySolve.AI</title>
+
   <link href="../css/main.css" rel="stylesheet">
   <link href="../css/about.css" rel="stylesheet">
+  <link href="../css/normalize.css" rel="stylesheet">
+
   <script defer src="../js/interface.js"></script>
   <script defer src="../js/tutorial.js"></script>
+
   <meta content="#fafafa" name="theme-color">
 </head>
 <body>
+
 <header>
   <h1>EasySolve.AI</h1>
   <nav>
     <a href="../index.html">Calculator</a>
     <a href="about.html">About</a>
   </nav>
-  <button id="themeToggle">Dark Mode</button>
+  <div id="themeToggleContainer">
+    <button id="themeToggle">Dark Mode</button>
+  </div>
 </header>
 
 <main>
@@ -25,39 +32,56 @@
     <h2>How to Use EasySolve.AI</h2>
 
     <h3>Introduction</h3>
-    <p>Welcome to EasySolve.AI! This intelligent calculator is not just another solver—it can automatically determine
-      the unknowns in a system of equations and find their values for you based on the information you provide.</p>
+    <p>This guide will introduce you to the core features of EasySolve.AI.</p>
 
     <h3>Basic Interface</h3>
-    <p>The user interface consists of two text boxes: The left text box is for user input where you'll define variables,
-      equations, and queries. The right text box displays the processed output.</p>
+    <p>The interface consists of two text boxes. The left textbox is for input where you'll define variables and
+      equations, while the right textbox will display the output.</p>
+    <iframe height="100" src="../index.html?hideHeader=true"></iframe>
 
-    <h4>Real-time Updates</h4>
-    <p>As you type, the system automatically processes the input and updates the output. For example, when you type a
-      Greek symbol like <code>\alpha</code>, it will automatically convert into α.</p>
+    <h3>Real-time Interaction</h3>
+    <p>EasySolve.AI updates in real-time as you type. It supports some latex characters and that allows you to type
+      using \ followed by the corresponding symbol name such as, <code>\alpha</code> which turns into its corresponding
+      symbol α.</p>
 
-    <h3>Defining Variables and Solving Equations</h3>
-    <p>You can define variables and equations and then ask the system to solve for unknowns. The system uses the
-      provided information to solve complex equations automatically.</p>
+    <h3>Basic Math Operations</h3>
+    <p>You can perform addition, subtraction, multiplication, division, derivatives, and integrals:</p>
+    <iframe data-example="2+2\n5-3\n6*7\n64/8\nD(x^2,x)\nint(x^2,x)" height="150" src="../index.html?hideHeader=true"
+    ></iframe>
 
-    <h4>Example 1</h4>
-    <iframe data-example="\alpha = 10\ntime = 10\n\omega_i = 10\n\omega_f" height="200" id="example1"
-            src="../index.html?hideHeader=true" width="400"></iframe>
+    <h3>Defining Variables and Equations</h3>
+    <p>Declare custom variables and equations to further streamline your calculations. For instance, you can define `y`
+      and `z`, and express their sum as `x`:</p>
+    <iframe data-example="x = y + z\ny = 10\nz = 5\nx" height="125" src="../index.html?hideHeader=true"
+    ></iframe>
+
+    <h3>Equation Rearrangement</h3>
+    <p>Equations are automatically rearranged to make it easier to understand what is needed. For example:</p>
+    <iframe data-example="a*d = b + c\nd = 10\nb" height="100" src="../index.html?hideHeader=true"></iframe>
 
     <h3>Querying for Equations</h3>
-    <p>If you're interested in all the equations related to a specific variable, you can simply type the variable name.
-      For instance, typing <code>\alpha</code> will provide you with all the equations that involve α.</p>
+    <p>Query variables to find relevant equations. For instance, query ω to find equations related to angular
+      velocity:</p>
+    <iframe data-example="ω" height="200" src="../index.html?hideHeader=true"></iframe>
 
-    <h4>Example 2</h4>
-    <iframe data-example="\alpha" height="200" id="example2" src="../index.html?hideHeader=true" width="400"></iframe>
+    <h3>Putting It All Together</h3>
+    <p>Let's combine these features to solve for angular velocity (ω):</p>
 
-    <h3>Advanced Features</h3>
-    <p>We have a selection of pre-defined equations from Physics' General Mechanics. When you type a variable related to
-      these equations, the solver knows the relevant equations to use. For example, typing <code>\omega</code> will
-      provide equations related to angular velocity.</p>
+    <p>First, let's query for equations involving ω.</p>
+    <iframe data-example="ω" height="200" src="../index.html?hideHeader=true"></iframe>
 
-    <h4>Example 3</h4>
-    <iframe data-example="\omega" height="200" id="example3" src="../index.html?hideHeader=true" width="400"></iframe>
+    <p> Now choose what to used based off of our available information, in our case let's solve using `power` and
+      `torque` and input these values.</p>
+    <iframe data-example="power = 30\ntorque = 15" height="200" src="../index.html?hideHeader=true"
+    ></iframe>
+
+    <p>Finally, just type ω to solve using all the provided data:</p>
+    <iframe data-example="power = 30\ntorque = 15\nω" height="200" src="../index.html?hideHeader=true"
+    ></iframe>
+
+    <p>The calculator considers the available equations, takes the `power` and `torque` values, and calculates ω. While
+      this is a simple example, using these core features the calculator can simplify the process of solving far more
+      complex problems.</p>
   </section>
 </main>
 
