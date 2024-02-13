@@ -39,8 +39,8 @@ async function processInput(inputText) {
           outputBox.value = processedOutput
             .replaceAll("Underscore", "_")
             .replaceAll("underscore", "_");
-          ok = true;
         }
+        ok = true;
       })
       .catch((error) => {
         console.error("Error:", error);
