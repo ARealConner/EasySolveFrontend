@@ -1,5 +1,6 @@
 let inputBox;
 let outputBox;
+let latestRequestId = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   inputBox = document.getElementById("inputBox");
@@ -17,25 +18,29 @@ async function processInput(inputText) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   for (let i = 0; i < 3; i++) {
     let ok = false;
+    latestRequestId++;
     // Call the backend API
-    sendProcessRequest(inputText)
+    sendProcessRequest(inputText, latestRequestId)
       .then((data) => {
-        // Accessing individual elements:
-        const processedInput = data["processedInput"];
-        const processedOutput = data["processedOutput"];
+        // Only update UI if the response is for the latest request
+        if (data.requestId === latestRequestId) {
+          // Accessing individual elements:
+          const processedInput = data["processedInput"];
+          const processedOutput = data["processedOutput"];
 
-        console.log("Processed Data:", data);
-        console.log("inputText:", inputText);
-        console.log("Processed Input:", processedInput);
-        console.log("Processed Output:", processedOutput);
+          console.log("Processed Data:", data);
+          console.log("inputText:", inputText);
+          console.log("Processed Input:", processedInput);
+          console.log("Processed Output:", processedOutput);
 
-        inputBox.value = processedInput
-          .replaceAll("Underscore", "_")
-          .replaceAll("underscore", "_");
-        outputBox.value = processedOutput
-          .replaceAll("Underscore", "_")
-          .replaceAll("underscore", "_");
-        ok = true;
+          inputBox.value = processedInput
+            .replaceAll("Underscore", "_")
+            .replaceAll("underscore", "_");
+          outputBox.value = processedOutput
+            .replaceAll("Underscore", "_")
+            .replaceAll("underscore", "_");
+          ok = true;
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -50,7 +55,7 @@ async function processInput(inputText) {
   }
 }
 
-async function sendProcessRequest(inputText) {
+async function sendProcessRequest(inputText, requestId) {
   const response = await fetch(
     "https://solverservice-dfab67be627f.herokuapp.com/api/processInput",
     {
@@ -58,7 +63,7 @@ async function sendProcessRequest(inputText) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ input: inputText }),
+      body: JSON.stringify({ input: inputText, requestId: requestId }),
     },
   );
 
